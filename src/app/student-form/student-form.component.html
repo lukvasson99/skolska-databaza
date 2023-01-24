@@ -1,0 +1,63 @@
+<div>
+  <h1>{{ this.service.inStudentAddMode ? 'Add ' : 'Edit ' }}Student</h1>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="firstName">First Name</label>
+      <br />
+      <input type="text" formControlName="firstName" id="firstName" />
+    </div>
+    <div>
+      <br />
+      <label for="lastName">Last Name</label>
+      <br />
+      <input type="text" formControlName="lastName" id="lastName" />
+    </div>
+    <div>
+      <br />
+      <label for="class">Class</label>
+      <br />
+      <input type="text" formControlName="class" id="class" />
+    </div>
+    <div>
+      <br />
+      <label for="dateOfBirth">Date Of Birth</label>
+      <br />
+      <input type="date" formControlName="dateOfBirth" id="dateOfBirth" />
+    </div>
+    <div>
+      <br />
+      <label for="division">Division</label>
+      <br />
+      <input type="text" formControlName="division" id="password" />
+    </div>
+    <div>
+      <br />
+      <label for="gender">Gender</label>
+      <br />
+      <input type="text" formControlName="gender" id="gender" />
+    </div>
+    <div>
+      <br />
+      <label for="average">Average</label>
+      <br />
+      <input type="text" formControlName="average" id="average" />
+    </div>
+    <div>
+      <br />
+      <label for="disabled">Disabled</label>
+      <br />
+      <input type="text" formControlName="disabled" id="disabled" />
+    </div>
+    <div>
+      <br />
+      <label for="awards">Awards</label>
+      <br />
+      <input type="text" formControlName="awards" id="awards" />
+    </div>
+    <br />
+    <button class="button" type="button" (click)="closeForm()">Back</button>
+    <button class="button" type="submit">
+      {{ this.service.inStudentAddMode ? 'Add ' : 'Edit ' }}Student
+    </button>
+  </form>
+</div>

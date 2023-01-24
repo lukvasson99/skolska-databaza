@@ -1,0 +1,45 @@
+<!--Nav Bar-->
+<div class="nav-bar">
+  <h1>Database</h1>
+  <div id="spacer"></div>
+  <button (click)="onDatabaseSwitchClick()">
+    {{ 'Go to: ' + buttonTexts[studentsActivated ? 1 : 0] + ' Database' }}
+  </button>
+  <br />
+  <button (click)="addStudentClick()" *ngIf="studentsActivated">
+    Add Student
+  </button>
+  <button (click)="addTeacherClick()" *ngIf="!studentsActivated">
+    Add Teacher
+  </button>
+</div>
+<!--Student Table-->
+<div class="databaseDiv">
+  <div *ngIf="studentsActivated">
+    <h1>Students</h1>
+    <table class="table">
+      <tr>
+        <th *ngFor="let column of studentHeaders">{{ column }}</th>
+      </tr>
+      <tr *ngFor="let student of students">
+        <td *ngFor="let column of studentKeys">{{ student[column] }}</td>
+        <button (click)="studentEditClick(student.id, student)">Edit</button>
+        <button (click)="studentDeleteClick(student.id)">Delete</button>
+      </tr>
+    </table>
+  </div>
+  <!--Teacher Table-->
+  <div *ngIf="!studentsActivated">
+    <h1>Teachers</h1>
+    <table class="table">
+      <tr>
+        <th *ngFor="let column of teacherHeaders">{{ column }}</th>
+      </tr>
+      <tr *ngFor="let teacher of teachers">
+        <td *ngFor="let column of teacherKeys">{{ teacher[column] }}</td>
+        <button (click)="teacherEditClick(teacher.id, teacher)">Edit</button>
+        <button (click)="teacherDeleteClick(teacher.id)">Delete</button>
+      </tr>
+    </table>
+  </div>
+</div>

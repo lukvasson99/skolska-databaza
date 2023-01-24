@@ -1,0 +1,39 @@
+<div>
+  <h1>{{ this.service.inTeacherAddMode ? 'Add ' : 'Edit ' }}Teacher</h1>
+  <form [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="firstName">First Name</label>
+      <br />
+      <input type="text" formControlName="firstName" id="firstName" />
+    </div>
+    <div>
+      <br />
+      <label for="lastName">Last Name</label>
+      <br />
+      <input type="text" formControlName="lastName" id="lastName" />
+    </div>
+    <div>
+      <br />
+      <label for="class">Class</label>
+      <br />
+      <input type="text" formControlName="class" id="class" />
+    </div>
+    <div>
+      <br />
+      <label for="age">Age</label>
+      <br />
+      <input type="text" formControlName="age" id="age" />
+    </div>
+    <div>
+      <br />
+      <label for="salary">Salary</label>
+      <br />
+      <input type="text" formControlName="salary" id="salary" />
+    </div>
+    <br />
+    <button class="button" type="button" (click)="closeForm()">Back</button>
+    <button class="button" type="submit">
+      {{ this.service.inTeacherAddMode ? 'Add ' : 'Edit ' }}Teacher
+    </button>
+  </form>
+</div>
